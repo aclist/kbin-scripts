@@ -1,12 +1,14 @@
 // ==UserScript==
-// @name                 kbin-dropdown
-// @namespace     https://github.com/aclist/kbin-scripts/
-// @description     make dropdown on profile page
-// @author               aclist
-// @version              0.0.1
-// @match                https://kbin.social/u/*
-// @require              http://code.jquery.com/jquery-3.4.1.min.js
-// @license              MIT
+// @name                  kbin-dropdown
+// @namespace      https://github.com/aclist/kbin-scripts/
+// @description      make dropdown on profile page
+// @author                aclist
+// @version               0.0.1
+// @match                 https://kbin.social/u/*
+// @require               http://code.jquery.com/jquery-3.4.1.min.js
+// @license               MIT
+//@downloadURL https://github.com/aclist/kbin-scripts/raw/main/dropdown.user.js 
+// @updateURL      https://github.com/aclist/kbin-scripts/raw/main/dropdown.user.js
 // ==/UserScript==
 
 /* globals $ */
