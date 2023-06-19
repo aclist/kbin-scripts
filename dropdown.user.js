@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name                 kbin-dropdown
-// @namespace     aclist
-// @description    make dropdown on profile page
-// @author              aclist
-// @version            0.0.1
-// @match            https://kbin.social/u/*
-// @require         http://code.jquery.com/jquery-3.4.1.min.js
-// @license         MIT
+// @namespace     https://github.com/aclist/kbin-scripts/
+// @description     make dropdown on profile page
+// @author               aclist
+// @version              0.0.1
+// @match                https://kbin.social/u/*
+// @require              http://code.jquery.com/jquery-3.4.1.min.js
+// @license              MIT
 // ==/UserScript==
 
 /* globals $ */
@@ -15,14 +15,14 @@ function buildDropdown(selector) {
     var option
     var text
     const items = document.querySelectorAll(selector);
-  items.forEach((item) => {
-      text = item.innerText;
-      var val = text.substring(0, text.indexOf(' '));
-      option = document.createElement("option");
-      option.setAttribute("value", val);
-      option.text = text;
-      selectList.appendChild(option);
-  });
+      items.forEach((item) => {
+          text = item.innerText;
+          var val = text.substring(0, text.indexOf(' '));
+          option = document.createElement("option");
+          option.setAttribute("value", val);
+          option.text = text;
+          selectList.appendChild(option);
+      });
 }
 
 //inject select menu//
