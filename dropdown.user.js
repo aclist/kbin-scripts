@@ -7,7 +7,7 @@
 // @match                 https://kbin.social/u/*
 // @require               http://code.jquery.com/jquery-3.4.1.min.js
 // @license               MIT
-//@downloadURL https://github.com/aclist/kbin-scripts/raw/main/dropdown.user.js 
+// @downloadURL https://github.com/aclist/kbin-scripts/raw/main/dropdown.user.js 
 // @updateURL      https://github.com/aclist/kbin-scripts/raw/main/dropdown.user.js
 // ==/UserScript==
 
