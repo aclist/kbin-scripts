@@ -3,7 +3,7 @@
 // @namespace      https://github.com/aclist/kbin-scripts/
 // @description      make dropdown on profile page
 // @author                aclist
-// @version               0.0.1
+// @version               0.0.2
 // @match                 https://kbin.social/u/*
 // @require               http://code.jquery.com/jquery-3.4.1.min.js
 // @license               MIT
@@ -13,23 +13,27 @@
 
 /* globals $ */
 
+function addOption(item){
+    var text = item.innerText;
+    var val = text.substring(0, text.indexOf(' '));
+    var option = document.createElement("option");
+     option.setAttribute("value", val);
+     option.text = text;
+     selectList.appendChild(option);
+}
+
 function buildDropdown(selector) {
-    var option
-    var text
+    var active = document.querySelector('.options__main li a.active')
+    addOption(active);
     const items = document.querySelectorAll(selector);
       items.forEach((item) => {
-          text = item.innerText;
-          var val = text.substring(0, text.indexOf(' '));
-          option = document.createElement("option");
-          option.setAttribute("value", val);
-          option.text = text;
-          selectList.appendChild(option);
+          addOption(item);
       });
 }
 
 //inject select menu//
 var leftDiv = document.querySelector(".options__title");
-var selector = '.options__main li'
+var selector = '.options__main li a:not(.active)'
 var selectList = document.createElement("select");
 selectList.setAttribute("id", "dropdown-select");
 selectList.style.cssText += 'margin-left: 10px;height:fit-content;font-size:0.8em;padding:5px';
