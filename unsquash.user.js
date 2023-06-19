@@ -5,7 +5,7 @@
 // @author        aclist
 // @version       0.0.5
 // @include       https://kbin.social/*
-// @license       GNU-V3.0
+// @license       MIT
 // ==/UserScript==
 
 const inlineSelector = 'figure a.thumb img';
