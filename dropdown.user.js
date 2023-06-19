@@ -1,45 +1,55 @@
 // ==UserScript==
-// @name                  kbin-unsquash
-// @namespace      https://github.com/aclist/
-// @description      unsquash inline images in comments
+// @name                  kbin-dropdown
+// @namespace      https://github.com/aclist/kbin-scripts/
+// @description      make dropdown on profile page
 // @author                aclist
-// @version               0.0.6
-// @match                 https://kbin.social/*
-// @license                MIT
-// @downloadURL https://github.com/aclist/kbin-scripts/raw/main/unsquash.user.js
-// @updateURL       https://github.com/aclist/kbin-scripts/raw/main/unsquash.user.js
+// @version               0.0.1
+// @match                 https://kbin.social/u/*
+// @require               http://code.jquery.com/jquery-3.4.1.min.js
+// @license               MIT
+// @downloadURL https://github.com/aclist/kbin-scripts/raw/main/dropdown.user.js
+// @updateURL      https://github.com/aclist/kbin-scripts/raw/main/dropdown.user.js
 // ==/UserScript==
 
-const inlineSelector = 'footer figure a.thumb img';
-const fixedSelector = 'article figure a img';
+/* globals $ */
 
-function updateImg(item, method) {
-   var style
-   if (method == "fixed") {
-    style = 'object-fit: cover !important';
-   } else {
-       var p = item.parentElement.href;
-       item.src = p;
-        style = 'max-width: 50% !important';
-   }
-    item.style.cssText += style;
+function buildDropdown(selector) {
+    var option
+    var text
+    const items = document.querySelectorAll(selector);
+      items.forEach((item) => {
+          text = item.innerText;
+          var val = text.substring(0, text.indexOf(' '));
+          option = document.createElement("option");
+          option.setAttribute("value", val);
+          option.text = text;
+          selectList.appendChild(option);
+      });
 }
 
-function checkItems(method) {
-    var selector
-    if (method == "fixed") {
-          selector = fixedSelector;
-     } else {
-          selector = inlineSelector;
-     }
-  const items = document.querySelectorAll(selector);
-  items.forEach((item) => {
-        updateImg(item,method);
-  });
-}
+//inject select menu//
+var leftDiv = document.querySelector(".options__title");
+var selector = '.options__main li'
+var selectList = document.createElement("select");
+selectList.setAttribute("id", "dropdown-select");
+selectList.style.cssText += 'margin-left: 10px;height:50px;font-size:0.8em';
+leftDiv.appendChild(selectList);
+buildDropdown(selector);
 
-/*both fixed size and inline images can exist on profile pages*/
-const imgTypes = ["inline", "fixed"];
-for (let i = 0; i < imgTypes.length; i++) {
-    checkItems(imgTypes[i]);
-}
+// clean up old elements //
+var horizontalScroll = document.querySelector('.options__main');
+horizontalScroll.parentNode.removeChild(horizontalScroll)
+var scrollArrows = document.querySelector('.scroll');
+scrollArrows.parentNode.removeChild(scrollArrows);
+
+// event listener //
+$(document).on('change','#dropdown-select',function(){
+    var page = $('#dropdown-select').val();
+    var baseUrl = window.location.href;
+    var urlArr = baseUrl.split("/");
+    var username = urlArr[4];
+    const pref = 'https://kbin.social/u/'
+    var finalUrl = pref + username + "/" + page;
+    console.log(finalUrl);
+    window.location = finalUrl;
+})
