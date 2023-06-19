@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name          kbin-mail
 // @description   Adds mail link next to usernames
+// @namespace      https://github.com/aclist/
 // @author        aclist
 // @version       0.0.1
 // @match         https://kbin.social/*
