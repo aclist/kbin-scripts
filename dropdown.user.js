@@ -32,7 +32,7 @@ var leftDiv = document.querySelector(".options__title");
 var selector = '.options__main li'
 var selectList = document.createElement("select");
 selectList.setAttribute("id", "dropdown-select");
-selectList.style.cssText += 'margin-left: 10px;height:50px;font-size:0.8em';
+selectList.style.cssText += 'margin-left: 10px;height:fit-content;font-size:0.8em;padding:5px';
 leftDiv.appendChild(selectList);
 buildDropdown(selector);
 
