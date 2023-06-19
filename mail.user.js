@@ -22,6 +22,9 @@ function insertElementAfter(target, element) {
 
 function getUsername(item) {
   try {
+     if ( item.href.split('/u/')[1].charAt(0) == '@') {
+         return null
+     }
     return item.href.split('/u/')[1];
   } catch (error) {
     return null;
@@ -51,7 +54,6 @@ function checkItem(item) {
 function checkItems(selector) {
   const items = document.querySelectorAll(selector);
   items.forEach((item) => {
-      console.log(item);
     if (!checkItem(item)) addItemLink(item);
   });
 }
