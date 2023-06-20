@@ -3,7 +3,7 @@
 // @namespace      https://github.com/aclist/kbin-scripts/
 // @description      make dropdown on profile page
 // @author                aclist
-// @version               0.0.2
+// @version               0.0.3
 // @match                 https://kbin.social/u/*
 // @require               http://code.jquery.com/jquery-3.4.1.min.js
 // @license               MIT
@@ -40,12 +40,6 @@ selectList.style.cssText += 'margin-left: 10px;height:fit-content;font-size:0.8e
 leftDiv.appendChild(selectList);
 buildDropdown(selector);
 
-// clean up old elements //
-var horizontalScroll = document.querySelector('.options__main');
-horizontalScroll.parentNode.removeChild(horizontalScroll)
-var scrollArrows = document.querySelector('.scroll');
-scrollArrows.parentNode.removeChild(scrollArrows);
-
 // event listener //
 $(document).on('change','#dropdown-select',function(){
     var page = $('#dropdown-select').val();
@@ -57,3 +51,9 @@ $(document).on('change','#dropdown-select',function(){
     console.log(finalUrl);
     window.location = finalUrl;
 })
+
+// clean up old elements //
+var horizontalScroll = document.querySelector('.options__main');
+horizontalScroll.style.cssText += 'display:none !important';
+var scrollArrows = document.querySelector('.scroll');
+scrollArrows.style.cssText += 'display:none !important';
