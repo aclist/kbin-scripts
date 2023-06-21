@@ -31,7 +31,7 @@ function addMags(){
     nav.appendChild(myListItem);
 }
 
-function addSubs(toggle){
+function addMags(toggle){
     console.log(toggle);
     if (toggle == false) {
         $('.subs-nav').remove();
