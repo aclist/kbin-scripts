@@ -62,10 +62,7 @@ function megamodInit(toggle){
     console.log(toggle);
     if (toggle == false) {
 	    console.log('removing');
-	let mails = document.querySelectorAll('.item-link')
-	    mails.forEach((item)=>{
-		    item.style.cssText += 'display:none !important';
-	    });
+	$('.item-link').remove();
     } else {
 	    console.log('spawning');
         checkItems(itemsSelector);
