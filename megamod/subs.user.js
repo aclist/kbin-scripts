@@ -6,8 +6,6 @@
 // @author       aclist
 // @match        https://kbin.social/*
 // @license               MIT
-// @downloadURL https://github.com/aclist/kbin-scripts/raw/main/megamod/subs.user.js
-// @updateURL      https://github.com/aclist/kbin-scripts/raw/main/megamod/subs.user.js
 // ==/UserScript==
 
 function createMags(){
