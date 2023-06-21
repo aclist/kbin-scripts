@@ -5,6 +5,7 @@
 // @author        aclist
 // @version       0.0.1
 // @match         https://kbin.social/*
+// @require               http://code.jquery.com/jquery-3.4.1.min.js
 // @license               MIT
 // @downloadURL https://github.com/aclist/kbin-scripts/raw/main/test.user.js
 // @updateURL      https://github.com/aclist/kbin-scripts/raw/main/test.user.js
@@ -63,7 +64,7 @@ function megamodInit(toggle){
     console.log(toggle);
     if (toggle == false) {
 	    console.log('removing');
-	$('.item-link').remove();
+	    $('.item-link').remove();
     } else {
 	    console.log('spawning');
         checkItems(itemsSelector);
