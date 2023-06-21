@@ -58,7 +58,11 @@ function checkItems(selector) {
   });
 }
 
-function megamodInit(){
-    checkItems(itemsSelector);
+function megamodInit(toggle){
+    if (!toggle) {
+        document.body.classList.remove('item-link')
+    } else {
+        checkItems(itemsSelector);
+    }
 }
 
