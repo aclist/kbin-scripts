@@ -59,9 +59,12 @@ function checkItems(selector) {
 }
 
 function megamodInit(toggle){
+    console.log(toggle);
     if (!toggle) {
+	    console.log('removing');
         document.body.classList.remove('item-link')
     } else {
+	    console.log('spawning');
         checkItems(itemsSelector);
     }
 }
