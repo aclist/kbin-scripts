@@ -53,7 +53,9 @@ $(document).on('change','#dropdown-select',function(){
 })
 
 // clean up old elements //
-var horizontalScroll = document.querySelector('.options__main');
-horizontalScroll.style.cssText += 'display:none !important';
-var scrollArrows = document.querySelector('.scroll');
-scrollArrows.style.cssText += 'display:none !important';
+    window.addEventListener("load", function () {
+    var horizontalScroll = document.querySelector('.options__main');
+    horizontalScroll.style.cssText += 'display:none !important';
+    var scrollArrows = document.querySelector('.scroll');
+    scrollArrows.style.cssText += 'display:none !important';
+});
