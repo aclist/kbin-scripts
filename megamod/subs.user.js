@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         kbin-subs
+// @name         kbin-subs-test
 // @namespace    https://github.com/aclist
 // @version      0.2
 // @description  put subs on top page
