@@ -21,7 +21,7 @@ if ( username == null) {
 const myListItem = document.createElement('li');
 const mySubsLink = document.createElement('a');
 mySubsLink.setAttribute('href', subLink);
-mySubsLink.innerText = 'My subs';
+mySubsLink.innerText = 'My mags';
 mySubsLink.className = 'subs-nav';
 myListItem.append(mySubsLink);
 
