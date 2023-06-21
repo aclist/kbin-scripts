@@ -60,7 +60,7 @@ function checkItems(selector) {
 
 function megamodInit(toggle){
     console.log(toggle);
-    if (!toggle) {
+    if (toggle == false) {
 	    console.log('removing');
         document.body.classList.remove('item-link')
     } else {
