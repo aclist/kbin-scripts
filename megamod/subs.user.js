@@ -10,7 +10,7 @@
 // @updateURL      https://github.com/aclist/kbin-scripts/raw/main/megamod/subs.user.js
 // ==/UserScript==
 
-function addMags(){
+function createMags(){
     var user = document.querySelector('.login');
     var split = user.href.split("/");
     var username = split[4];
@@ -36,6 +36,6 @@ function addMags(toggle){
     if (toggle == false) {
         $('.subs-nav').remove();
     } else {
-        addMags();
+        createMags();
     }
 }
