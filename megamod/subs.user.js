@@ -10,13 +10,15 @@
 // ==/UserScript==
 
 function createMags(){
+    var nav = document.querySelector('.head-nav__menu');
+    var mags = document.querySelector('[href="/magazines"]');
     var user = document.querySelector('.login');
     var split = user.href.split("/");
     var username = split[4];
-    var subLink = 'https://kbin.social/u/' + username + '/subscriptions'
+    var subLink = 'https://kbin.social/u/' + username + '/subscriptions';
     console.log(username);
         if ( username == null) {
-            return
+            return;
         } else {
     const myListItem = document.createElement('li');
     const mySubsLink = document.createElement('a');
@@ -25,9 +27,8 @@ function createMags(){
     mySubsLink.className = 'subs-nav';
     myListItem.append(mySubsLink);
 
-    var nav = document.querySelector('.head-nav__menu');
-    var mags = document.querySelector('[href="/magazines"]');
-    nav.appendChild(myListItem);
+        nav.appendChild(myListItem);
+    }
 }
 
 function initMags(toggle){
