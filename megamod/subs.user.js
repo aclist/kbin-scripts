@@ -39,3 +39,4 @@ function addMags(toggle){
         createMags();
     }
 }
+addMags(toggle);
