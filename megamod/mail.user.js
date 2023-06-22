@@ -7,8 +7,8 @@
 // @match         https://kbin.social/*
 // @require               http://code.jquery.com/jquery-3.4.1.min.js
 // @license               MIT
-// @downloadURL https://github.com/aclist/kbin-scripts/raw/main/test.user.js
-// @updateURL      https://github.com/aclist/kbin-scripts/raw/main/test.user.js
+// @downloadURL https://github.com/aclist/kbin-scripts/raw/main/mail.user.js
+// @updateURL      https://github.com/aclist/kbin-scripts/raw/main/mail.user.js
 // ==/UserScript==
 
 const itemsSelector = '.user-inline';
