@@ -63,10 +63,8 @@ function checkItems(selector) {
 function addMail(toggle){
     console.log(toggle);
     if (toggle == false) {
-	    console.log('removing');
 	    $('.item-link').remove();
     } else {
-	    console.log('spawning');
         checkItems(itemsSelector);
     }
 }
