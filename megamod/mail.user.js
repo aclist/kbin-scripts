@@ -60,7 +60,7 @@ function checkItems(selector) {
   });
 }
 
-function megamodInit(toggle){
+function addMail(toggle){
     console.log(toggle);
     if (toggle == false) {
 	    console.log('removing');
