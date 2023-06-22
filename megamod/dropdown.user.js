@@ -64,9 +64,9 @@ function addDropdown(){
 function removeDropdown(){
             $('#dropdown-select').remove();
             var horizontalScroll = document.querySelector('.options__main');
-            horizontalScroll.style.cssText += 'display:inline !important';
+            horizontalScroll.style.cssText += 'display:grid !important';
             var scrollArrows = document.querySelector('.scroll');
-            scrollArrows.style.cssText += 'display:inline !important';
+            scrollArrows.style.cssText += 'display:grid !important';
 }
 function dropdownEntry(toggle){
     console.log(toggle);
