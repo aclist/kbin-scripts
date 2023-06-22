@@ -1,36 +1,37 @@
 // ==UserScript==
-// @name                  kbin-dropdown
+// @name           kbin-dropdown
 // @namespace      https://github.com/aclist/kbin-scripts/
-// @description      make dropdown on profile page
-// @author                aclist
-// @version               0.0.3
-// @match                 https://kbin.social/u/*
-// @require               http://code.jquery.com/jquery-3.4.1.min.js
-// @license               MIT
-// @downloadURL https://github.com/aclist/kbin-scripts/raw/main/dropdown.user.js
+// @description    make dropdown on profile page
+// @author         aclist
+// @version        0.0.3
+// @match          https://kbin.social/u/*
+// @require        http://code.jquery.com/jquery-3.4.1.min.js
+// @license        MIT
+// @downloadURL    https://github.com/aclist/kbin-scripts/raw/main/dropdown.user.js
 // @updateURL      https://github.com/aclist/kbin-scripts/raw/main/dropdown.user.js
 // ==/UserScript==
 
 /* globals $ */
 
-function addOption(item){
-    var text = item.innerText;
-    var val = text.substring(0, text.indexOf(' '));
-    var option = document.createElement("option");
-     option.setAttribute("value", val);
-     option.text = text;
-     selectList.appendChild(option);
-}
-
-function buildDropdown(selector) {
-    var active = document.querySelector('.options__main li a.active')
-    addOption(active);
-    const items = document.querySelectorAll(selector);
-      items.forEach((item) => {
-          addOption(item);
-      });
-}
 function addDropdown(){
+    function addOption(item){
+        var text = item.innerText;
+        var val = text.substring(0, text.indexOf(' '));
+        var option = document.createElement("option");
+        var document.querySelector
+         option.setAttribute("value", val);
+         option.text = text;
+         selectList.appendChild(option);
+    }
+
+    function buildDropdown(selector) {
+        var active = document.querySelector('.options__main li a.active')
+        addOption(active);
+        const items = document.querySelectorAll(selector);
+          items.forEach((item) => {
+              addOption(item);
+          });
+    }
     //inject select menu//
     var leftDiv = document.querySelector(".options__title");
     var selector = '.options__main li a:not(.active)'
@@ -52,7 +53,7 @@ function addDropdown(){
         window.location = finalUrl;
     })
 
-    // clean up old elements //
+	// clean up old elements //
         window.addEventListener("load", function () {
         var horizontalScroll = document.querySelector('.options__main');
         horizontalScroll.style.cssText += 'display:none !important';
