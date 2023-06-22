@@ -18,6 +18,7 @@ function addDropdown(){
         var text = item.innerText;
         var val = text.substring(0, text.indexOf(' '));
         var option = document.createElement("option");
+        var selectList = document.querySelector(".options__title select");
          option.setAttribute("value", val);
          option.text = text;
          selectList.appendChild(option);
